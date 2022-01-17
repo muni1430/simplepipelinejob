@@ -4,19 +4,19 @@ pipeline {
         stage('Compile Stage') { 
             steps {
             withMaven(maven : 'maven_3_8_4')
-                sh 'mvn compile'
+               echo 'mvn compile'
             }
         }
         stage('Test') { 
            steps {
             withMaven(maven : 'maven_3_8_4')
-                sh 'mvn test'
+                echo 'mvn test'
             }
         }
         stage('Deploy') { 
              steps {
             withMaven(maven : 'maven_3_8_4')
-                sh 'mvn deploy'
+                echo 'mvn deploy'
             }
         }
     }
