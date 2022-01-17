@@ -1,20 +1,17 @@
 pipeline {
-    agent label {'main'}
+    agent any
     stages {
         stage('Compile Stage') { 
-        
             steps {
-                sh 'mvn clean'
+                sh 'clean'
             }
         }
         stage('Test') { 
-        
            steps {
                 sh 'test'
             }
         }
         stage('Deploy') { 
-        
              steps {
                 sh 'deploy'
             }
